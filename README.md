@@ -1,4 +1,4 @@
-My name is Tiago, I'm a computer science student and I'm developing this simple Java CRUD project just for studying proposes
+I'm developing this pure Java CRUD project just for studying proposes.
 
 How to run the project:
 - Clone the project and import at Intellij IDEA
