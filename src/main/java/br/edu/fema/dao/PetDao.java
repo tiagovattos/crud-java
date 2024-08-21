@@ -45,6 +45,8 @@ public class PetDao {
             pet.setName(rs.getString("name"));
             pet.setAge(rs.getInt("age"));
         }
+        rs.close();
+        ps.close();
         return pet;
     }
 
@@ -54,6 +56,16 @@ public class PetDao {
         ps.setLong(1, pet.getId());
         ps.setString(2, pet.getName());
         ps.setInt(3, pet.getAge());
+        ps.execute();
+        ps.close();
+    }
+
+    public void update (Pet pet) throws SQLException {
+        String sql = "UPDATE PET SET name = ?, age = ? WHERE id = ?";
+        PreparedStatement ps = connection.prepareStatement(sql);
+        ps.setString(1, pet.getName());
+        ps.setInt(2, pet.getAge());
+        ps.setLong(3, pet.getId());
         ps.execute();
         ps.close();
     }
