@@ -1,7 +1,7 @@
 package br.edu.fema;
 
 import br.edu.fema.dao.PetDao;
-import br.edu.fema.exception.ObjectNotFoundException;
+import br.edu.fema.entity.Pet;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -11,17 +11,15 @@ public class Main {
         Connection conn = DriverManager.getConnection("jdbc:h2:~/test", "sa", "");
         PetDao petDao = new PetDao(conn);
 
-//        Pet pet = new Pet(2L, "Esquilo", 13);
+        Pet pet = new Pet(1L, "Esquilo", 13);
 
-//        petDao.insert(pet);
+        petDao.insert(pet);
 
-        try {
-            System.out.println(petDao.selectById(3L));
-        } catch (ObjectNotFoundException e) {
-            System.out.println(e.getMessage());
-        }
+        System.out.println(petDao.selectById(2L));
 
         System.out.println(petDao.selectAll());
+
+        petDao.delete(2L);
 
         conn.close();
     }
