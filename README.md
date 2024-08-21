@@ -1,5 +1,5 @@
 # Pure Java CRUD
-> I'm developing this pure Java CRUD project just for studying proposes.
+> I'm developing this pure Java CRUD project just for studying purpose.
 
 ## Tools
 - Java 21
